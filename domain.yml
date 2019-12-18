@@ -1,0 +1,66 @@
+intents:
+- affirm
+- deny
+- goodbye
+- greet
+- joke
+- name
+- provide_address
+- provide_city
+- provide_state
+- provide_zipcode
+- status
+- thanks
+- weather
+entities:
+- address
+- city
+- name
+- state
+- weather
+- zipcode
+slots:
+  address:
+    type: text
+  city:
+    type: text
+  name:
+    type: text
+  state:
+    type: text
+  zipcode:
+    type: text
+templates:
+  utter_name:
+  - text: Hey there! Tell me your name.
+  utter_greet:
+  - text: Nice to you meet you {name}. How can I help?
+  utter_goodbye:
+  - text: Talk to you later!
+  utter_thanks:
+  - text: My pleasure.
+  utter_address:
+  - text: Hey there! Your address is {address}.
+  utter_city:
+  - text: Nice to you meet you {name}. Your city is {city}
+  utter_zipcode:
+  - text: Talk to you later! Your zipcode is {zipcode}
+  utter_state:
+  - text: My pleasure. Your state is {state}
+  utter_status:
+  - text: Your slots values are state:{state}, city:{city}, zipcode:{zipcode}, address:{address},
+      name {name}
+actions:
+- action_joke
+- get_next_question
+- get_open_slots
+- get_weather
+- utter_address
+- utter_city
+- utter_goodbye
+- utter_greet
+- utter_name
+- utter_state
+- utter_status
+- utter_thanks
+- utter_zipcode
