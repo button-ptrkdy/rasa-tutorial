@@ -1,0 +1,94 @@
+  - mood_unhappy
+  - bot_challenge
+  - lookup
+  - deploy+say_application
+  - deploy+say_application+say_environment
+  - deploy+say_application+say_version
+  - deploy+say_application+say_version+say_environment
+  - frink
+
+actions:
+  - action_pugme
+  - utter_happy
+  - utter_goodbye
+  - utter_iamabot
+  - action_hello_world
+  - action_button_cli
+  - utter_looking
+  - utter_lookup_failure
+  - utter_lookup_success
+  - utter_deploying
+  - utter_ask_confirmation
+  - utter_ask_version
+  - utter_ask_environment
+  - utter_ask_application
+  - utter_cancelled
+  - action_reset_deploy
+  - utter_would_frink
+  - action_reset_slots
+
+entities:
+  - mood
+  - lookup_thing
+  - lookup_result
+  - lookup_source
+  - application
+  - version
+  - environment
+  - frink_phrase
+
+slots:
+  pug:
+@@ -61,6 +78,23 @@ slots:
+    type: unfeaturized
+  features:
+    type: unfeaturized
+  application:
+    type: unfeaturized
+    auto_fill: false
+  version:
+    type: unfeaturized
+    auto_fill: false
+  environment:
+    type: unfeaturized
+    auto_fill: false
+  confirmation:
+    type: unfeaturized
+    auto_fill: false
+  frink_phrase:
+    type: unfeaturized
+
+forms:
+  - deploy_form
+
+templates:
+  utter_pugme:
+@@ -142,3 +176,28 @@ templates:
+          elements:
+            - type: plain_text
+              text: "{lookup_data}"
+
+  utter_ask_application:
+    - text: "Which application do you want to deploy?"
+
+  utter_ask_environment:
+    - text: "Which environment do you want to deploy to?"
+
+  utter_ask_version:
+    - text: "Which version of the application should be deployed?"
+
+  utter_ask_confirmation:
+    - text: "Are you ready to deploy {application} {version} to {environment}?"
+    - text: "Are you ready to deploy {application} `{version}` to *{environment}*?"
+      channel: slack
+
+  utter_deploying:
+    - text: "Deploying {application} {version} to {environment}"
+    - text: "Deploying {application} `{version}` to *{environment}*"
+      channel: slack
+
+  utter_cancelled:
+    - text: "Cancelled..."
+
+  utter_would_frink:
+    - text: "Would frink right here..."
