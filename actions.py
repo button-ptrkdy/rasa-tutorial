@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 # basic_info_flag = False
 
 
-class ActionJoke(Action):
+class ActionResponseLogs(Action):
     def name(self):
         # define the name of the action which can then be included in training stories
         return "response_logs"
