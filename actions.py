@@ -15,6 +15,18 @@ logger = logging.getLogger(__name__)
 
 # basic_info_flag = False
 
+
+class ActionJoke(Action):
+    def name(self):
+        # define the name of the action which can then be included in training stories
+        return "response_logs"
+
+    def run(self, dispatcher, tracker, domain):
+        # what your action should do
+        request = "do something"
+        dispatcher.utter_message(request)  # send the message back to the user
+        return []
+
 class ActionJoke(Action):
     def name(self):
         # define the name of the action which can then be included in training stories
